@@ -1,0 +1,18 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.products_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.container h1 {
+  font-size: 32px;
+  color: var(--text-dark-blue);
+  margin-bottom: 30px;
+} 

@@ -1,0 +1,219 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modalHeader {
+  margin-bottom: 30px;
+}
+
+.modalTitle {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  color: #333;
+  text-align: center;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  color: #666;
+}
+
+.step.active {
+  background: var(--background-dark-blue);
+  color: white;
+}
+
+.stepLine {
+  width: 60px;
+  height: 2px;
+  background: #eee;
+  margin: 0 10px;
+}
+
+.stepLine.active {
+  background: var(--background-dark-blue);
+}
+
+.stepContent {
+  min-height: 300px;
+  margin-bottom: 30px;
+}
+
+.stepTitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+  color: #333;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--background-dark-blue);
+}
+
+.mapContainer {
+  height: 300px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.vtbPaymentWidget {
+  height: 300px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.totalAmount {
+  font-size: 18px;
+  color: #333;
+}
+
+.amount {
+  font-weight: 600;
+  color: var(--background-dark-blue);
+  margin-left: 10px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.backButton {
+  padding: 12px 24px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  color: #666;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.nextButton {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  background: var(--background-dark-blue);
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nextButton:hover {
+  background: #0a3475;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.closeButton:hover {
+  opacity: 0.7;
+}
+
+.selectedPoint {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 15px;
+}
+
+.selectedPoint p {
+  margin: 0;
+  color: #333;
+}
+
+.selectedPoint p:first-child {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.vtbWidget {
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .stepLine {
+    width: 30px;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .backButton,
+  .nextButton {
+    width: 100%;
+  }
+} 

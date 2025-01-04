@@ -1,0 +1,203 @@
+.contacts {
+  width: 100%;
+  background-color: var(--background-light);
+  padding: 40px 0 80px;
+}
+
+.contacts__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+.breadcrumbs a {
+  color: var(--text-dark-blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--background-dark-blue);
+}
+
+.contacts__title {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-dark-blue);
+  margin-bottom: 50px;
+}
+
+/* Info Grid */
+.contacts__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.contacts__card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.contacts__card:hover {
+  transform: translateY(-5px);
+}
+
+.contacts__icon {
+  font-size: 32px;
+  color: var(--background-dark-blue);
+  margin-bottom: 20px;
+}
+
+.contacts__card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-dark-blue);
+  margin-bottom: 15px;
+}
+
+.contacts__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contacts__info a {
+  color: var(--text-dark-blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contacts__info a:hover {
+  color: var(--background-dark-blue);
+}
+
+.contacts__info p {
+  color: var(--text-gray);
+  font-size: 14px;
+}
+
+/* Departments */
+.contacts__departments {
+  margin-bottom: 60px;
+}
+
+.contacts__subtitle {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--text-dark-blue);
+  margin-bottom: 30px;
+}
+
+.departments__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.department__card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.department__card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-dark-blue);
+  margin-bottom: 10px;
+}
+
+.department__card p {
+  color: var(--text-gray);
+  margin-bottom: 15px;
+}
+
+.department__card a {
+  color: var(--background-dark-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Map */
+.map__container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Адаптивная верстка */
+@media (max-width: 1200px) {
+  .contacts__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .departments__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts__title {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .contacts__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .departments__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts__subtitle {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contacts {
+    padding: 20px 0 40px;
+  }
+
+  .contacts__container {
+    padding: 0 15px;
+  }
+
+  .contacts__title {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  .contacts__card,
+  .department__card {
+    padding: 20px;
+  }
+
+  .contacts__icon {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .contacts__card h3 {
+    font-size: 18px;
+  }
+} 

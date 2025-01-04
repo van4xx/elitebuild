@@ -1,0 +1,163 @@
+/* Основные стили для селектора городов */
+.city_selector_container {
+  position: relative;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.city_selector_header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-dark-blue);
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.city_selector_header:hover {
+  background-color: rgba(5, 38, 89, 0.05);
+}
+
+.city_selector_selected {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.city_selector_icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-dark-blue);
+}
+
+.city_selector_location_icon {
+  width: 16px;
+  height: 16px;
+  color: var(--text-dark-blue);
+}
+
+.city_selector_dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  background: white;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1001;
+  padding: 15px;
+}
+
+.city_selector_search {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.city_selector_search input {
+  width: 100%;
+  padding: 10px 35px 10px 15px;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.city_selector_search input:focus {
+  border-color: var(--background-dark-blue);
+}
+
+.city_selector_clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #999;
+  padding: 5px;
+}
+
+.city_selector_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.city_selector_item {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--text-dark-blue);
+  border-radius: 4px;
+}
+
+.city_selector_item:hover {
+  background-color: #F5F5F5;
+}
+
+.city_selector_item_selected {
+  background-color: rgba(5, 38, 89, 0.05);
+  font-weight: 500;
+}
+
+.city_selector_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+@media (max-width: 425px) {
+  .city_selector_dropdown {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 350px;
+    max-height: 80vh;
+    padding: 20px;
+  }
+
+  .city_selector_search input {
+    font-size: 16px;
+    padding: 12px 40px 12px 15px;
+  }
+
+  .city_selector_item {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .city_selector_clear {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Стили для скроллбара */
+.city_selector::-webkit-scrollbar {
+  width: 6px;
+}
+
+.city_selector::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.city_selector::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.city_selector::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} 

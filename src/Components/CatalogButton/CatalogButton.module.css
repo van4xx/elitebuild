@@ -1,0 +1,41 @@
+.catalog_wrapper {
+  position: relative;
+  z-index: 1000;
+}
+
+.catalog_button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: var(--background-dark-blue);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.catalog_button:hover,
+.catalog_button.active {
+  background: var(--background-darker-blue);
+}
+
+.catalog_button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.catalog_button.active {
+  border-radius: 8px 8px 0 0;
+}
+
+/* Добавляем стили для ссылки */
+.catalog_wrapper > a {
+  text-decoration: none;
+  display: block;
+} 

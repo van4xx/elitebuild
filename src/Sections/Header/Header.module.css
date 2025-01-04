@@ -1,0 +1,257 @@
+.header {
+  padding: 60px 0;
+  background-color: var(--background-light);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Основные категории */
+.main_categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.category_card {
+  display: flex;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: 300px;
+}
+
+.card_content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card_content h2 {
+  font-size: 28px;
+  color: var(--text-dark-blue);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.card_content p {
+  font-size: 16px;
+  color: var(--text-gray);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.card_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background-color: var(--background-dark-blue);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.card_button:hover {
+  background-color: var(--background-darker-blue);
+  transform: translateY(-2px);
+}
+
+.card_image {
+  width: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card_image img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.category_card:hover .card_image img {
+  transform: scale(1.05);
+}
+
+/* Преимущества */
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.advantage_card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.advantage_card:hover {
+  transform: translateY(-5px);
+}
+
+.advantage_icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-light);
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.advantage_icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.advantage_card h3 {
+  font-size: 20px;
+  color: var(--text-dark-blue);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.advantage_card p {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.5;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1200px) {
+  .category_card {
+    height: 250px;
+  }
+
+  .card_image {
+    width: 300px;
+  }
+
+  .card_content {
+    padding: 30px;
+  }
+
+  .card_content h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 40px 0;
+  }
+
+  .main_categories {
+    grid-template-columns: 1fr;
+  }
+
+  .category_card {
+    height: auto;
+  }
+
+  .card_content {
+    padding: 30px;
+  }
+
+  .advantages {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    gap: 40px;
+  }
+
+  .advantages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category_card {
+    flex-direction: column;
+  }
+
+  .card_image {
+    width: 100%;
+    height: 200px;
+    order: -1;
+  }
+
+  .card_content {
+    text-align: center;
+  }
+
+  .card_button {
+    margin: 0 auto;
+  }
+
+  .advantage_icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 30px 0;
+  }
+
+  .advantages {
+    grid-template-columns: 1fr;
+  }
+
+  .card_content {
+    padding: 20px;
+  }
+
+  .card_content h2 {
+    font-size: 20px;
+  }
+
+  .card_button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .advantage_card {
+    padding: 20px;
+  }
+
+  .advantage_icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 16px;
+  }
+
+  .advantage_card h3 {
+    font-size: 18px;
+  }
+} 

@@ -1,0 +1,76 @@
+.products_container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.products_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Стили для мобильной версии */
+@media (max-width: 768px) {
+  .products_grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 10px;
+    gap: 15px;
+  }
+
+  .products_grid > * {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+  }
+
+  /* Скрываем скроллбар */
+  .products_grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .products_grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Стили при перетаскивании */
+  .products_grid.dragging {
+    cursor: grabbing;
+    user-select: none;
+  }
+
+  .products_grid.dragging > * {
+    pointer-events: none;
+  }
+}
+
+/* Добавляем индикаторы прокрутки */
+.scroll_indicator {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .scroll_indicator {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .scroll_dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-gray);
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+  }
+
+  .scroll_dot.active {
+    opacity: 1;
+  }
+} 

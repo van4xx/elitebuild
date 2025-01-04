@@ -1,0 +1,117 @@
+/* Основные стили для селектора городов */
+.city-selector {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1001;
+  padding: 20px;
+}
+
+/* Поле поиска */
+.city-selector__search {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.city-selector__search input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+}
+
+.city-selector__search input:focus {
+  border-color: var(--background-dark-blue);
+}
+
+/* Список городов */
+.city-selector__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.city-selector__item {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--text-dark-blue);
+}
+
+.city-selector__item:hover {
+  background-color: #F5F5F5;
+}
+
+/* Заголовок */
+.city-selector__title {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark-blue);
+  margin-bottom: 15px;
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 425px) {
+  .city-selector {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 320px;
+    max-height: 80vh;
+    background-color: white;
+    z-index: 1002;
+  }
+
+  /* Затемнение фона для мобильных */
+  .city-selector-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+  }
+
+  .city-selector__search input {
+    font-size: 16px; /* Увеличиваем размер для удобства на мобильных */
+    padding: 12px 15px;
+  }
+
+  .city-selector__item {
+    padding: 12px 15px;
+    font-size: 16px;
+  }
+}
+
+/* Стили для скроллбара */
+.city-selector::-webkit-scrollbar {
+  width: 6px;
+}
+
+.city-selector::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.city-selector::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.city-selector::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

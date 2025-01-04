@@ -1,0 +1,276 @@
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1400px;
+  background: white;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  z-index: 1003;
+  margin-top: 1px;
+  border-radius: 0 0 12px 12px;
+}
+
+.categories_wrapper {
+  display: flex;
+  width: 900px;
+  height: 520px;
+  background: white;
+  border-radius: 0 0 12px 12px;
+}
+
+.main_categories {
+  width: 320px;
+  min-width: 320px;
+  background: var(--background-light);
+  border-right: 1px solid #eaeaea;
+  overflow-y: auto;
+}
+
+.category {
+  padding: 16px 20px;
+  cursor: pointer;
+  color: var(--text-dark-blue);
+  font-weight: 500;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #eaeaea;
+  transition: all 0.2s ease;
+}
+
+.category:hover {
+  background: #f0f0f0;
+  color: var(--background-dark-blue);
+}
+
+.category.active {
+  background: var(--background-dark-blue);
+  color: white;
+  font-weight: 600;
+}
+
+.subcategories_panel {
+  flex: 1;
+  padding: 24px 32px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  background: white;
+}
+
+.subcategory {
+  margin-bottom: 24px;
+}
+
+.subcategory > a {
+  display: block;
+  color: var(--text-dark-blue);
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #eaeaea;
+  transition: color 0.2s ease;
+}
+
+.subcategory > a:hover {
+  color: var(--background-dark-blue);
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  color: var(--text-gray);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+
+.item:hover {
+  color: var(--background-dark-blue);
+}
+
+/* Адаптивные стили */
+@media (max-width: 1400px) {
+  .dropdown {
+    max-width: 1200px;
+  }
+
+  .main_categories {
+    width: 300px;
+    min-width: 300px;
+  }
+
+  .subcategories_panel {
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .dropdown {
+    left: 0;
+    right: 0;
+    transform: none;
+    max-width: 100%;
+  }
+
+  .categories_wrapper {
+    height: 480px;
+    width: 800px;
+  }
+
+  .main_categories {
+    width: 280px;
+    min-width: 280px;
+  }
+
+  .subcategories_panel {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    gap: 24px;
+  }
+
+  .subcategory {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .categories_wrapper {
+    height: 440px;
+  }
+
+  .main_categories {
+    width: 260px;
+    min-width: 260px;
+  }
+
+  .category {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .subcategories_panel {
+    padding: 16px;
+    gap: 20px;
+  }
+
+  .subcategory > a {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .item {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(100vh - 60px);
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .categories_wrapper {
+    flex-direction: column;
+  }
+
+  .main_categories {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    max-height: 45vh;
+    border-right: none;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .subcategories_panel {
+    grid-template-columns: repeat(2, 1fr);
+    height: 55vh;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .category {
+    padding: 12px 16px;
+  }
+
+  .subcategory {
+    margin-bottom: 16px;
+  }
+
+  .subcategory > a {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dropdown {
+    top: 50px;
+    height: calc(100vh - 50px);
+  }
+
+  .main_categories {
+    max-height: 40vh;
+  }
+
+  .subcategories_panel {
+    grid-template-columns: 1fr;
+    height: 60vh;
+    padding: 12px 16px;
+  }
+
+  .category {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .subcategory {
+    margin-bottom: 14px;
+  }
+
+  .subcategory > a {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .item {
+    font-size: 13px;
+    padding: 3px 0;
+  }
+}
+
+/* Стили для скроллбара */
+.main_categories::-webkit-scrollbar,
+.subcategories_panel::-webkit-scrollbar {
+  width: 4px;
+}
+
+.main_categories::-webkit-scrollbar-thumb,
+.subcategories_panel::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 2px;
+}
+
+.main_categories::-webkit-scrollbar-track,
+.subcategories_panel::-webkit-scrollbar-track {
+  background: transparent;
+} 

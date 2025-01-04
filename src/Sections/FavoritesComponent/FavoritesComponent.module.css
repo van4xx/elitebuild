@@ -1,0 +1,124 @@
+.favorites {
+  width: 100%;
+  background-color: var(--background-light);
+  padding: 40px 0 80px;
+}
+
+.favorites__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.favorites__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.favorites__title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark-blue);
+}
+
+.favorites__icon {
+  color: #e74c3c;
+}
+
+.favorites__count {
+  font-size: 16px;
+  color: var(--text-gray);
+  background: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.favorites__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.favorites__item {
+  position: relative;
+}
+
+.remove_button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  color: #e74c3c;
+  font-size: 14px;
+  z-index: 10;
+}
+
+.favorites__item:hover .remove_button {
+  opacity: 1;
+}
+
+.remove_button:hover {
+  background: #e74c3c;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.empty_state {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.empty_icon {
+  font-size: 48px;
+  color: #e74c3c;
+  margin-bottom: 20px;
+}
+
+.empty_state h2 {
+  font-size: 24px;
+  color: var(--text-dark-blue);
+  margin-bottom: 10px;
+}
+
+.empty_state p {
+  color: var(--text-gray);
+}
+
+@media (max-width: 768px) {
+  .favorites {
+    padding: 20px 0 40px;
+  }
+
+  .favorites__header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .favorites__title {
+    font-size: 28px;
+  }
+
+  .favorites__grid {
+    gap: 20px;
+  }
+} 

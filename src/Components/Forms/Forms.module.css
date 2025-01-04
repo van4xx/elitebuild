@@ -1,0 +1,62 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form_group label {
+  font-size: 14px;
+  color: var(--text-dark-blue);
+  font-weight: 500;
+}
+
+.form_group input,
+.form_group select,
+.form_group textarea {
+  padding: 12px 16px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form_group input:focus,
+.form_group select:focus,
+.form_group textarea:focus {
+  border-color: var(--background-dark-blue);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(26, 75, 140, 0.1);
+}
+
+.form_group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit_button {
+  background: var(--background-dark-blue);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit_button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.submit_button:active {
+  transform: translateY(-1px);
+} 

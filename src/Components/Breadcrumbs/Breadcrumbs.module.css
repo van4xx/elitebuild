@@ -1,0 +1,57 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.item {
+  color: var(--text-gray);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.item:hover:not(.active) {
+  color: var(--background-dark-blue);
+}
+
+.item.active {
+  color: var(--text-dark-blue);
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.arrow {
+  color: var(--text-gray);
+  font-size: 14px;
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+/* Добавляем стили для контейнера */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .breadcrumbs {
+    margin: 16px 0;
+    gap: 8px;
+  }
+
+  .item {
+    font-size: 13px;
+  }
+
+  .arrow {
+    font-size: 12px;
+  }
+} 

@@ -1,0 +1,154 @@
+.catalog {
+  padding: 40px 0 80px;
+  background: var(--background-white);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark-blue);
+  margin-bottom: 40px;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.category {
+  border-radius: 16px;
+  background: white;
+  padding: 32px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+}
+
+.category_title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-dark-blue);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.subcategories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.subcategory {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.subcategory_title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark-blue);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.subcategory_title:hover {
+  color: var(--background-dark-blue);
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item {
+  color: var(--text-gray);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.item:hover {
+  color: var(--background-dark-blue);
+}
+
+.more_items {
+  font-size: 13px;
+  color: var(--background-dark-blue);
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .subcategories {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .category {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog {
+    padding: 24px 0 60px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .categories {
+    gap: 40px;
+  }
+
+  .category {
+    padding: 20px;
+  }
+
+  .category_title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+
+  .subcategories {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .subcategory_title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .catalog {
+    padding: 20px 0 40px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .category {
+    padding: 16px;
+  }
+
+  .category_title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+} 
