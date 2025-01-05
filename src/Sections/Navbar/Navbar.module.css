@@ -899,4 +899,154 @@
   .navbar_middle__catalog_dropdown .item {
     font-size: 14px;
   }
+}
+
+/* Добавляем стили для мобильной корзины */
+.mobile_cart {
+  display: none;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+  text-decoration: none;
+}
+
+.mobile_cart_icon_wrapper {
+  background: var(--background-dark-blue);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.mobile_cart_icon {
+  color: white;
+  font-size: 20px;
+}
+
+.mobile_cart_badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #e74c3c;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+}
+
+/* Показываем мобильную корзину только на мобильных устройствах */
+@media (max-width: 768px) {
+  .mobile_cart {
+    display: block;
+  }
+}
+
+/* Добавляем отступ для контента, чтобы не перекрывать кнопку корзины */
+@media (max-width: 768px) {
+  .navbar__content {
+    padding-bottom: 80px;
+  }
+}
+
+/* Добавим стили для мобильных контролов */
+.navbar__mobile_controls {
+  display: none;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar__mobile_cart {
+  text-decoration: none;
+  color: var(--text-dark-blue);
+}
+
+.navbar__mobile_cart_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__mobile_cart_icon {
+  font-size: 24px;
+}
+
+.navbar__mobile_cart_badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #e74c3c;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+@media (max-width: 768px) {
+  .navbar__mobile_controls {
+    display: flex;
+  }
+  
+  /* Обновим стили для бургер-меню */
+  .navbar__burger_menu {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* Добавим стили для контролов */
+.navbar__controls {
+  display: none; /* Скрываем по умолчанию */
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar__cart_link {
+  position: relative;
+  color: var(--text-dark-blue);
+}
+
+.navbar__cart_icon {
+  font-size: 24px;
+}
+
+.navbar__cart_badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #e74c3c;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+/* Показываем только на мобильных устройствах */
+@media (max-width: 768px) {
+  .navbar__controls {
+    display: flex;
+  }
 } 

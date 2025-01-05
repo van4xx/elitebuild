@@ -36,7 +36,7 @@ const Navbar = () => {
 
   const handleSearch = () => {
     if (searchQuery.trim()) {
-      router.push(`/Subcategory3?query=${encodeURIComponent(searchQuery)}`);
+      router.push(`/category/21`);
     }
   };
 
@@ -113,7 +113,7 @@ const Navbar = () => {
   } = useAppContext();
 
   // Получаем количество товаров
-  const cartCount = cart.length;
+  const cartItemsCount = cart.length;
   const favoritesCount = favorites.length;
   const comparisonCount = comparison.length;
 
@@ -146,16 +146,17 @@ const Navbar = () => {
             
             <div className={styles.navbar_middle__right_group}>
               <CatalogButton />
-              <button 
-                className={styles.navbar__burger_menu} 
-                onClick={toggleMobileMenu}
-                aria-label="Меню"
-              >
-                {isMobileMenuOpen ? 
-                  <IoClose className={styles.navbar__burger_icon} /> : 
-                  <FaBars className={styles.navbar__burger_icon} />
-                }
-              </button>
+              <div className={styles.navbar__controls}>
+                <Link href="/Cart" className={styles.navbar__cart_link}>
+                  <FaShoppingCart className={styles.navbar__cart_icon} />
+                  {cartItemsCount > 0 && (
+                    <span className={styles.navbar__cart_badge}>{cartItemsCount}</span>
+                  )}
+                </Link>
+                <button className={styles.navbar__burger_menu} onClick={toggleMobileMenu}>
+                  {isMobileMenuOpen ? <IoClose className={styles.navbar__burger_icon} /> : <FaBars className={styles.navbar__burger_icon} />}
+                </button>
+              </div>
             </div>
 
             <div className={styles.navbar_middle__search}>
@@ -272,8 +273,8 @@ const Navbar = () => {
               <Link href="/Cart" className={styles.mobile_menu__item}>
                 <FaShoppingCart className={styles.mobile_menu__icon} />
                 <span>Корзина</span>
-                {cartCount > 0 && (
-                  <span className={styles.mobile_menu__badge}>{cartCount}</span>
+                {cartItemsCount > 0 && (
+                  <span className={styles.mobile_menu__badge}>{cartItemsCount}</span>
                 )}
               </Link>
             </div>
@@ -287,11 +288,6 @@ const Navbar = () => {
         className={`${styles.navbar__overlay} ${isMobileMenuOpen ? styles.active : ''}`} 
         onClick={toggleMobileMenu}
       ></div>
-
-      {/* Кнопка бургер-меню */}
-      <button className={styles.navbar__burger_menu} onClick={toggleMobileMenu}>
-        {isMobileMenuOpen ? <IoClose className={styles.navbar__burger_icon} /> : <FaBars className={styles.navbar__burger_icon} />}
-      </button>
 
       {/* Модальное окно формы заявки */}
       {isLeaveRequestFormOpen && (
