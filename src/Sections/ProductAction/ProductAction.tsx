@@ -19,9 +19,6 @@ const ProductAction = () => {
             <p className={styles.description}>
               Выгодные предложения на строительные материалы и инструменты
             </p>
-            <Link href="/promotions" className={styles.button}>
-              Все акции
-            </Link>
           </div>
 
           <div className={styles.cards}>
